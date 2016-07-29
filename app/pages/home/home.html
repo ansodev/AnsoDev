@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar danger>
+    <ion-title>
+      AnsoDev
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-card *ngFor="let video of videos">
+      <img [src]="video.snippet.thumbnails.high.url" alt="" />
+
+      <ion-card-content>
+        <ion-card-title>
+          <h2>{{video.snippet.title}}</h2>
+        </ion-card-title>
+
+        <p>
+          {{video.snippet.description}}
+        </p>
+      </ion-card-content>
+
+      <ion-buttons end>
+        <button clear (click)="onShow(video)">Assistir</button>
+      </ion-buttons>
+
+    </ion-card>
+  </ion-list>
+</ion-content>
